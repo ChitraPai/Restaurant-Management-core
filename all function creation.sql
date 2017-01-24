@@ -88,3 +88,13 @@ END ##
 DELIMITER ;
 
 
+
+/*Function to check whether the order is placed*/
+DELIMITER $$
+CREATE FUNCTION fn_is_order_placed(in_order_id INT)
+RETURNS BOOLEAN
+BEGIN
+RETURN(EXISTS(SELECT order_id FROM order_transaction WHERE order_id=in_order_id));
+END$$
+
+

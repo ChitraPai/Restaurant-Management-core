@@ -52,7 +52,7 @@ THEN
                 
                  /*To validate given items and quantities*/
                 CALL pr_order_calculation1(order_id,food1,quant1,@Result1);
-                SELECT @Result1;
+               SET Result=@Result1;
                   
                 
                 SET food_itm = INSERT(food_itm,1,foodlen1 + 1,'');
